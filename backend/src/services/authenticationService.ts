@@ -1,9 +1,6 @@
-import {Service} from 'typedi';
+import { Service } from "typedi";
 
 @Service()
 export class AuthenticationService {
-
-  constructor() {
-    
-  }
+  constructor() {}
 }

@@ -1,5 +1,5 @@
-import {Service} from 'typedi';
-import winston, {createLogger} from 'winston';
+import { Service } from "typedi";
+import winston, { createLogger } from "winston";
 
 @Service()
 export class LoggerService {
@@ -10,13 +10,13 @@ export class LoggerService {
       all: true,
     }),
     winston.format.label({
-      label: '[WEBAPI]',
+      label: "[WEBAPI]",
     }),
     winston.format.timestamp({
-      format: 'DD-MM-YY HH:mm:ss',
+      format: "DD-MM-YY HH:mm:ss",
     }),
     winston.format.printf(
-      ({label, timestamp, meta, level, message}) =>
+      ({ label, timestamp, meta, level, message }) =>
         `${label}  ${timestamp} | ${meta} [${level}] : ${message}`
     )
   );
