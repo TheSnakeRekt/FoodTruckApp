@@ -1,43 +1,26 @@
 export default function Root() {
-    return (
-      <>
-        <div id="sidebar">
-          <h1>React Router Contacts</h1>
-          <div>
-            <form id="search-form" role="search">
-              <input
-                id="q"
-                aria-label="Search contacts"
-                placeholder="Search"
-                type="search"
-                name="q"
-              />
-              <div
-                id="search-spinner"
-                aria-hidden
-                hidden={true}
-              />
-              <div
-                className="sr-only"
-                aria-live="polite"
-              ></div>
-            </form>
-            <form method="post">
-              <button type="submit">New</button>
-            </form>
-          </div>
-          <nav>
-            <ul>
-              <li>
-                <a href={`/contacts/1`}>Your Name</a>
-              </li>
-              <li>
-                <a href={`/contacts/2`}>Your Friend</a>
-              </li>
-            </ul>
-          </nav>
+  return (
+    <>
+      <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8 text-white mt-10">
+        <div className="sm:mx-auto sm:w-full sm:max-w-sm">
+          <img
+            className="mx-auto rounded-[100px]"
+            src="tablet.webp"
+            alt="Your Company"
+          />
+          <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight">
+            TruckTrack: Manage your food trucks with ease.
+          </h2>
         </div>
-        <div id="detail"></div>
-      </>
-    );
-  }
+
+        
+          <p className="my-20 text-center text-sm font-semibold">
+            Log in securely to access your inventory and truck tracking
+          </p>
+
+          <button href="" className="my-40 mx-auto text-black bg-gray-200 py-2 rounded-2xl w-[30%]"> Login </button>
+        
+      </div>
+    </>
+  )
+}
