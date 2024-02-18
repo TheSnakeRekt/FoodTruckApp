@@ -4,7 +4,7 @@ import "reflect-metadata";
 
 @Service()
 export class AuthenticationController {
-  constructor(private AuthenticationService: AuthenticationService) {}
+  constructor(private authenticationService: AuthenticationService) {}
 
-  authenticate(params: any) {}
+  async authenticate(params: any) {}
 }

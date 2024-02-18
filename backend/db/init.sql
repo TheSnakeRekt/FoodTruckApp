@@ -46,7 +46,7 @@ CREATE TABLE IF NOT EXISTS execution_time (
     to_be_done_by_role VARCHAR(10) NOT NULL,
     to_be_done_before VARCHAR(100) NOT NULL,
     to_be_done_after VARCHAR(100) NOT NULL,
-    to_be_done_required boolean DEFAULT 1 NOT NULL,
+    to_be_done_required boolean DEFAULT true NOT NULL,
     created_at timestamp with time zone DEFAULT CURRENT_TIMESTAMP NOT NULL,
     updated_at timestamp with time zone DEFAULT CURRENT_TIMESTAMP NOT NULL
 );

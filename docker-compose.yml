@@ -29,7 +29,7 @@ services:
         - REDIS_EXPIRE_TIME=80000
         - REDIS_HOST=redis
         - REDIS_PORT=6379
-        - DB_HOST=localhost
+        - DB_HOST=postgres
         - DB_PORT=5432
         - DB_USER=postgres
         - DB_PASSWORD="Postgres2024!"

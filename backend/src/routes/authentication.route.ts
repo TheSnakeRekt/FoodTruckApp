@@ -1,4 +1,4 @@
-import { Application, Request, Response, NextFunction } from "express";
+import { Application, Request, Response } from "express";
 import { CommonRoutesConfig } from "../common/abstract/common.routes.config";
 import { Service } from "typedi";
 import { AuthenticationController } from "../controllers/authenticationController";

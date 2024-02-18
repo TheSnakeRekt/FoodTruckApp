@@ -93,5 +93,15 @@ docker-compose down
 - postgres-volume: Local volume for PostgreSQL data.
 - backend-reports: Local volume for backend reports.
 
+## Setting Up PostgreSQL Connection
+
+When creating the connection to access the PostgreSQL instance, consider the following:
+
+- Access http://localhost:16543/browser/
+- In Host name/address, specify the name of the container corresponding to the PostgreSQL instance (`postgres`).
+- In Port, set the value to `5432` (the default port for accessing the container and available from the `postgres` network; do not specify the port where PostgreSQL is mapped on the host).
+- In the Username attribute, specify the default PostgreSQL user (`postgres`), and in Password, use the corresponding password (`Postgres2024!`).
+
+Ensure to use these credentials when configuring the PostgreSQL connection.
 
 This README provides an overview of the Docker Compose setup for your Food Truck Application, including instructions for setup, usage, and details about each service. Adjustments can be made according to your specific needs.

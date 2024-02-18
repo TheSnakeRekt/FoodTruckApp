@@ -4,7 +4,7 @@ const {
   REDIS_PORT = 6379,
   CACHE_EXPIRE_TIME = 60000,
   API_KEY = "",
-  DB_HOST = "localhost",
+  DB_HOST = "postgres",
   DB_PORT = "5432",
   DB_USER = "postgres",
   DB_PASSWORD,
