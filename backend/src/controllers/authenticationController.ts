@@ -1,5 +1,6 @@
-import {AuthenticationService} from "../services/authenticationService"
-import 'reflect-metadata'
+import {AuthenticationService} from "../services/authenticationService";
+import { Service } from "typedi";
+import 'reflect-metadata';
 
 @Service()
 export class AuthenticationController { 
