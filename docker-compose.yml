@@ -34,6 +34,7 @@ services:
         - DB_USER=postgres
         - DB_PASSWORD="Postgres2024!"
         - DB_SSL=false
+        - DB_NAME=postgres
         - REPORT_BASE_PATH=/src/reports
     depends_on:
       - redis
