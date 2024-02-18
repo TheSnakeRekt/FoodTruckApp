@@ -1,4 +1,10 @@
+import { useState } from 'react';
+
 export default function Root() {
+  const [checked, setChecked] = useState(false);
+  const handleChecked = () => {
+    setChecked((previousState) => !previousState);
+  }
   return (
     <>
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8 text-white mt-10">
@@ -12,15 +18,90 @@ export default function Root() {
             TruckTrack: Manage your food trucks with ease.
           </h2>
         </div>
+        <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
 
-        
-          <p className="my-20 text-center text-sm font-semibold">
-            Log in securely to access your inventory and truck tracking
-          </p>
+          {checked ?
+            <>
 
-          <button href="" className="my-40 mx-auto text-black bg-gray-200 py-2 rounded-2xl w-[30%]"> Login </button>
-        
+              <form className="space-y-6" action="#" method="POST">
+                <div>
+                  <label htmlFor="username" className="block text-sm font-medium leading-6 ">
+                    Username
+                  </label>
+                  <div className="mt-2">
+                    <input
+                      placeholder='Enter your username'
+                      id="username"
+                      name="username"
+                      type="username"
+                      autoComplete="username"
+                      required
+                      className=" bg-gray-400 block w-full p-2 rounded-md border-0 py-1.5 text-gray-900 shadow-sm placeholder:text-gray-200  focus:ring-2  sm:text-sm sm:leading-6"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <div className="flex items-center justify-between">
+                    <label htmlFor="password" className="block text-sm font-medium leading-6 ">
+                      Password
+                    </label>
+
+                  </div>
+                  <div className="mt-2">
+                    <input
+                      placeholder='Enter your password'
+                      id="password"
+                      name="password"
+                      type="password"
+                      autoComplete="current-password"
+                      required
+                      className=" bg-gray-400 block w-full p-2 rounded-md border-0 py-1.5 text-gray-900 shadow-sm placeholder:text-gray-200  focus:ring-2  sm:text-sm sm:leading-6"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <button
+                    type="submit"
+                    className="flex w-full justify-center rounded-md bg-gray-200 px-3 py-1.5 text-sm font-semibold leading-6 text-black shadow-sm"
+                  >
+                    Sign in
+                  </button>
+                </div>
+                <div className="text-sm">
+                  <a href="#" className="font-semibold ">
+                    Forgot password?
+                  </a>
+                </div>
+              </form>
+
+            </>
+            : (<>
+              <div className='h-[184px]'>
+                <p className='text-center'>
+                Log in securely to access inventory and truck tracking
+
+                </p>
+                 </div>
+              <div>
+                <button
+                    type="button"
+                    onClick={handleChecked}
+                    className="flex w-full justify-center rounded-md bg-gray-200 px-3 py-1.5 text-sm font-semibold leading-6 text-black shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                    >
+                    Welcome
+                  </button>
+
+              </div>
+            </>
+
+            )}
+        </div>
+
+
       </div>
+
     </>
   )
 }
