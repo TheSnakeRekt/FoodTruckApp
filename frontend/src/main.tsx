@@ -5,13 +5,19 @@ import {
   RouterProvider,
 } from "react-router-dom";
 
-import Root from "./routes/root";
+import Root from "./views/root";
+import DashBoard from "./views/dashboard";
 
 import "./index.css";
 
 const router = createBrowserRouter([
-  {    path: "/",
-  element: <Root />,
+  {
+    path: "/",
+    element: <Root />,
+  },
+  {
+    path: "/dashboard",
+    element: <DashBoard />,
   },
 ]);
 

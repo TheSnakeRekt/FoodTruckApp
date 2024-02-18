@@ -7,12 +7,13 @@ export default function Root() {
   }
   return (
     <>
-      <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8 text-white mt-10">
+      <div className="landscape:hidden h-screen flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8 text-white">
+
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <img
             className="mx-auto rounded-[100px]"
             src="tablet.webp"
-            alt="Your Company"
+            alt="TruckTrack"
           />
           <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight">
             TruckTrack: Manage your food trucks with ease.
@@ -80,18 +81,18 @@ export default function Root() {
             : (<>
               <div className='h-[184px]'>
                 <p className='text-center'>
-                Log in securely to access inventory and truck tracking
+                  Log in securely to access inventory and truck tracking
 
                 </p>
-                 </div>
+              </div>
               <div>
                 <button
-                    type="button"
-                    onClick={handleChecked}
-                    className="flex w-full justify-center rounded-md bg-gray-200 px-3 py-1.5 text-sm font-semibold leading-6 text-black shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                    >
-                    Welcome
-                  </button>
+                  type="button"
+                  onClick={handleChecked}
+                  className="flex w-full justify-center rounded-md bg-gray-200 px-3 py-1.5 text-sm font-semibold leading-6 text-black shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                >
+                  Welcome
+                </button>
 
               </div>
             </>
@@ -100,6 +101,16 @@ export default function Root() {
         </div>
 
 
+      </div>
+      <div className="portrait:hidden grid grid-cols-2 h-screen">
+        <div className="bg-red-500"></div>scale 
+        <div className="bg-blue-500">
+          <img
+            className="object-cover"
+            src="tablet.webp"
+            alt="TruckTrack"
+          />
+        </div>
       </div>
 
     </>
