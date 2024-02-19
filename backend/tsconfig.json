@@ -16,5 +16,5 @@
     "experimentalDecorators": true,
     "noImplicitAny": false
   },
-  "include": ["src/**/*.ts", "test/**/*.ts"]
+  "include": ["*.ts","src/**/*.ts", "test/**/*.ts"]
 }

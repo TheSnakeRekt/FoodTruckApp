@@ -1,13 +1,13 @@
-import express, {Express} from 'express';
-import * as http from 'http';
-import cookieParser from 'cookie-parser';
-import cors from 'cors';
-import {CommonRoutesConfig} from './common/abstract/common.routes.config';
-import {AuthenticationRoutes} from './routes/authentication.route';
-import {Container} from 'typedi';
-import {PORT} from '../environmentVariables';
-import {LoggerService} from './services/loggerService';
-import {Logger} from 'winston';
+import express, { Express } from "express";
+import * as http from "http";
+import cookieParser from "cookie-parser";
+import cors from "cors";
+import { CommonRoutesConfig } from "./common/abstract/common.routes.config";
+import { AuthenticationRoutes } from "./routes/authentication.route";
+import { Container } from "typedi";
+import { PORT } from "../environmentVariables";
+import { LoggerService } from "./services/loggerService";
+import { Logger } from "winston";
 
 export class Server {
   private server!: http.Server;
@@ -19,7 +19,7 @@ export class Server {
     private loggerService: LoggerService
   ) {
     this.logger = this.loggerService.logger;
-    this.logger.defaultMeta = {meta: 'Server'};
+    this.logger.defaultMeta = { meta: "Server" };
 
     this.init();
     this.listen(Number(PORT));
@@ -43,17 +43,17 @@ export class Server {
       });
 
       this.logger.info(`Server is running at http://localhost:${port}`, {
-        meta: 'Server',
+        meta: "Server",
       });
     });
   }
 
   async stop() {
-    this.logger.warn('Shutting down server...', {
-      meta: 'Server',
+    this.logger.warn("Shutting down server...", {
+      meta: "Server",
     });
     this.server.close(() => {
-      this.logger.info('Server Shutdown', {meta: 'SIGINT'});
+      this.logger.info("Server Shutdown", { meta: "SIGINT" });
     });
   }
 }

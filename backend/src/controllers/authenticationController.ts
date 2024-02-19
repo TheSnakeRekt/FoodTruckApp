@@ -1,13 +1,10 @@
-import {AuthenticationService} from "../services/authenticationService"
-import 'reflect-metadata'
+import { AuthenticationService } from "../services/authenticationService";
+import { Service } from "typedi";
+import "reflect-metadata";
 
 @Service()
-export class AuthenticationController { 
-    
-    constructor(private AuthenticationService: AuthenticationService){}
-    
-    
-    authenticate(params: any) {
-        
-    }
+export class AuthenticationController {
+  constructor(private authenticationService: AuthenticationService) {}
+
+  async authenticate(params: any) {}
 }

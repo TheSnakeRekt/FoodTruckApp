@@ -1,30 +1,29 @@
-import { GameController } from '../controllers/gameController';
-import { Application, Request, Response, NextFunction} from "express";
-import { CommonRoutesConfig } from "../common/abstract/common.routes.config"
-import { Service } from 'typedi';
+import { Application, Request, Response } from "express";
+import { CommonRoutesConfig } from "../common/abstract/common.routes.config";
+import { Service } from "typedi";
+import { AuthenticationController } from "../controllers/authenticationController";
 
 @Service()
-export class GamesRoutes extends CommonRoutesConfig {
+export class AuthenticationRoutes extends CommonRoutesConfig {
+  static readonly routeName = "AuthenticationRoutes";
 
-    static readonly routeName = 'GamesRoutes';
+  constructor(private routesController: AuthenticationController) {
+    super(AuthenticationRoutes.routeName);
+  }
 
-    constructor(private gamesController: GameController){
-        super(GamesRoutes.routeName);
-    }
+  configureRoutes(): Application {
+    this.app
+      .route("/auth")
+      .post(async (req: Request, res: Response) => {
+        const data = await this.routesController.authenticate(req.body);
+        if (data !== null) {
+          res.status(200).send(data);
+        } else {
+          res.status(404).send(data);
+        }
+      })
+      .get();
 
-    configureRoutes(): Application {
-        this.app.route('/auth')
-            .post(this.post.bind(this), async (req:Request, res:Response) => {
-              const data = await this.gamesController.getGames(req.query);
-              if(data !== null){
-                res.status(200).send(data);
-                this.set.bind(this, req.route.path, data);
-              }else{
-                res.status(404).send(data);
-              }
-            })
-            .get();
-
-        return this.app;
-    }
+    return this.app;
+  }
 }
