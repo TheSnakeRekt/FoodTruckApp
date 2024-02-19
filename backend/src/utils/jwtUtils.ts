@@ -2,8 +2,10 @@ import jwt from "jsonwebtoken";
 import { JWT_SECRET } from "../../environmentVariables";
 
 export interface TokenPayload {
-  userId: string;
-  // Etc
+  username: string;
+  role: string;
+  contact: string;
+  email: string;
 }
 
 export function generateToken(payload: TokenPayload): string {
