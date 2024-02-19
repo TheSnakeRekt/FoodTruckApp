@@ -6,5 +6,7 @@ import "reflect-metadata";
 export class AuthenticationController {
   constructor(private authenticationService: AuthenticationService) {}
 
-  async authenticate(params: any) {}
+  async authenticate({ username, password }: any) {
+    this.authenticationService.authenticate(username, password);
+  }
 }

@@ -2,6 +2,7 @@ import { Application, Request, Response } from "express";
 import { CommonRoutesConfig } from "../common/abstract/common.routes.config";
 import { Service } from "typedi";
 import { AuthenticationController } from "../controllers/authenticationController";
+import { authenticateJWT } from "../middlewares/verify";
 
 @Service()
 export class AuthenticationRoutes extends CommonRoutesConfig {
@@ -22,7 +23,11 @@ export class AuthenticationRoutes extends CommonRoutesConfig {
           res.status(404).send(data);
         }
       })
-      .get();
+      .get(authenticateJWT, (req: Request, res: Response) => {
+        if (req.user !== null) {
+          res.status(200).send(req.user);
+        }
+      });
 
     return this.app;
   }
