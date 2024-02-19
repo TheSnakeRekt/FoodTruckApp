@@ -10,6 +10,7 @@ const {
   DB_PASSWORD,
   DB_SSL = false,
   DB_NAME,
+  JWT_SECRET = "default-secret",
 } = process.env;
 
 export {
@@ -24,4 +25,5 @@ export {
   DB_PASSWORD,
   DB_SSL,
   DB_NAME,
+  JWT_SECRET,
 };
